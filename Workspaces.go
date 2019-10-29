@@ -1,4 +1,4 @@
-package main
+package workspaces
 
 import (
 	"encoding/json"
@@ -46,17 +46,4 @@ func GoToDesktop(id int) {
 	if err != nil {
 		log.Fatalf("cmd.Run() failed with %s\n", err)
 	}
-}
-
-func main() {
-	current_desktop_id := GetCurrentDesktopId()
-	fmt.Printf("Current Desktop ID: %d\n", current_desktop_id)
-
-	workspace_names := GetWorkspaceNames()
-
-	for i, element := range workspace_names {
-		fmt.Printf("Desktop %d: %s\n", i, element)
-	}
-
-	fmt.Printf("Current Desktop Name: %s\n", workspace_names[current_desktop_id])
 }
